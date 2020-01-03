@@ -1,0 +1,4 @@
+FROM jojomi/hugo
+
+CMD hugo --source=/src --destination=/tmp/html --baseURL=${HUGO_BASE_URL}
+

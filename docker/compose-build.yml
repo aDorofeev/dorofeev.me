@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+    dorofeev.me:
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile-build
+        expose:
+            - 80
+        environment:
+            - VIRTUAL_HOST=dorofeev.localhost
+            - VIRTUAL_PORT=80
+            - VIRTUAL_NETWORK=nginx-proxy
+        networks:
+            - nginx-proxy
+
+networks:
+    nginx-proxy:
+        external: true
+
